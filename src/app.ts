@@ -9,6 +9,10 @@ export const app = new Hono()
 
 app.use(logger())
 
+app.get('/', (c) => {
+    return c.redirect('https://github.com/ejnshtein/trash-taste-channel')
+})
+
 app.get('/callback-from-youtube', async (c) => {
   // const hubTopic = c.req.query('hub.topic')
   const hubChallenge = c.req.query('hub.challenge')
